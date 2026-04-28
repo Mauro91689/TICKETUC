@@ -1,0 +1,17 @@
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
+async function crearTicket() {
+  try {
+    const docRef = await addDoc(collection(db, "tickets"), {
+      evento: "Concierto X",
+      precio: 5000,
+      usuario: "test@test.com",
+      estado: "activo",
+      fecha: new Date()
+    });
+
+    console.log("Ticket creado con ID:", docRef.id);
+  } catch (e) {
+    console.error("Error creando ticket:", e);
+  }
+}
