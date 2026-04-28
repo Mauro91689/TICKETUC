@@ -19,3 +19,8 @@ const app = initializeApp(firebaseConfig);
 // Servicios que vas a usar
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+
+export { db };
